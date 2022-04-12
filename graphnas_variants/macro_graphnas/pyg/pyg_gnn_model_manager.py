@@ -25,7 +25,7 @@ def load_data(dataset="Cora", supervised=False, full_data=True):
     elif dataset in ["Computers", "Photo"]:
         dataset = Amazon(path, dataset, T.NormalizeFeatures())
     elif dataset in ["Cora", "Citeseer", "Pubmed"]:
-        dataset = Planetoid(path, dataset, T.NormalizeFeatures())
+        dataset = Planetoid(root=path, name=dataset, transform=T.NormalizeFeatures())
     data = dataset[0]
     if supervised:
         if full_data:

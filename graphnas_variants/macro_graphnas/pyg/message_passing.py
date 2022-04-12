@@ -2,7 +2,7 @@ import inspect
 import sys
 
 import torch
-from torch_geometric.utils import scatter_
+from backport import scatter_
 
 special_args = [
     'edge_index', 'edge_index_i', 'edge_index_j', 'size', 'size_i', 'size_j'
